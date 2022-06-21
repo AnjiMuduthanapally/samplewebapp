@@ -13,7 +13,9 @@ spec:
         app: samplewebapp 
     spec:
       containers:
-        - name: samplewebapp 
-          image: devopsmelacr.azurecr.io/samplewebapp
-          ports:
-          - containerPort: 80
+      - name: samplewebapp 
+        image: myacrrepo31384924.azurecr.io/myacrrepo31384924:latest
+         ports:
+         - containerPort: 80
+      imagePullSecrets:
+      - name: imagepullsecret
