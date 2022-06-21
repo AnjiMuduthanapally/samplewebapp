@@ -72,6 +72,7 @@ stages:
             displayName: Create imagePullSecret
             inputs:
               action: 'createSecret'
+              kubernetesServiceConnection: 'aksSC'
               secretName: $(imagePullSecret)
               dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
 
@@ -86,4 +87,3 @@ stages:
                 $(imagePullSecret)
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
-
